@@ -117,6 +117,7 @@ Main loop.
 while True:
     robot_command = None
 
+    #run state machine
     if robot_state == "RANDOM_SEARCH":
         robot_command = randomSearch()
     elif robot_state == "MOVE_TO_TARGET":
@@ -126,8 +127,8 @@ while True:
     elif robot_state == "MEMORY_NAVIGATION":
         robot_command = memoryNavigation()
     else:
+        #wait()
         pass
-        # wait()
 
-    # sendCommand(robot_command)
     print(robot_state + " " + robot_command.__str__())
+    # sendCommand(robot_command)
